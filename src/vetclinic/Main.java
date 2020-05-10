@@ -10,11 +10,14 @@ public class Main {
 	public static void main(String[] args) {
 		System.out.println("Vet Clinic");
 
+		// create animals using factory
 		AnimalFactory animalFactory = new AnimalFactory();
 		ArrayList<Animal> animals = animalFactory.createAnimals(1000);
-		System.out.println(animals);
-		
-		
+		System.out.println(animals);		
+
+		// show main menu loop
+		Menu menu = new Menu();
+		menu.mainMenuLoop();
 	}
 
 }

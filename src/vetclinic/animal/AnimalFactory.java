@@ -39,8 +39,10 @@ public class AnimalFactory {
 		ArrayList<String> names = this.getNames();
 		ArrayList<String> conditions = this.getConditions();
 		ArrayList<Animal> animals = new ArrayList<Animal>();
-		
+
+		// loop count times
 		for (int i = 0; i < count; i++) {
+			// get name, condition and age
 			String name = names.get(this.rnd.nextInt(names.size()));
 			String condition = conditions.get(this.rnd.nextInt(conditions.size()));
 			int age = this.rnd.nextInt(10);
@@ -48,6 +50,7 @@ public class AnimalFactory {
 			// randomly pick an animal type
 			Animal animal = null;
 			int animalType = this.rnd.nextInt(4);
+			// create the animal
 			switch (animalType) {
 				case 0:
 					animal = this.createCat(name, condition, age);
@@ -62,11 +65,13 @@ public class AnimalFactory {
 					animal = this.createRabbit(name, condition, age);
 					break;
 			}
+			// add the animal to the list
 			animals.add(animal);
 		}		
 		return animals;
 	}
 
+	// create a Cat
 	private Cat createCat(String name, String condition, int age) {
 		Cat cat = new Cat();
 		cat.setName(name);
@@ -76,6 +81,7 @@ public class AnimalFactory {
 		return cat;
 	}
 
+	// create a Dog
 	private Dog createDog(String name, String condition, int age) {
 		Dog dog = new Dog();
 		dog.setName(name);
@@ -85,6 +91,7 @@ public class AnimalFactory {
 		return dog;
 	}
 
+	// create a Pig	
 	private Pig createPig(String name, String condition, int age) {
 		Pig pig = new Pig();
 		pig.setName(name);
@@ -94,6 +101,7 @@ public class AnimalFactory {
 		return pig;
 	}
 
+	// create a Rabbit
 	private Rabbit createRabbit(String name, String condition, int age) {
 		Rabbit rabbit = new Rabbit();
 		rabbit.setName(name);
