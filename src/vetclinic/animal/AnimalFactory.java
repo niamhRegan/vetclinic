@@ -11,7 +11,7 @@ public class AnimalFactory {
     private Random rnd = new Random();
 
     // read a file line by line into an array list
-	private ArrayList<String> readFile(String filePath) {
+	public ArrayList<String> readFile(String filePath) {
 		ArrayList<String> list = new ArrayList<String>();
 	    try (BufferedReader br = new BufferedReader(new FileReader(filePath))) {	 
 	        String line;
@@ -25,23 +25,23 @@ public class AnimalFactory {
 	}
 	
 	// get list of pet names
-	private ArrayList<String> getNames() {
+	public ArrayList<String> getNames() {
 		return this.readFile("petnames.txt");
 	}
 
 	// get list of pet conditions
-	private ArrayList<String> getConditions() {
+	public ArrayList<String> getConditions() {
 		return this.readFile("conditions.txt");
 	}
 
 	// create list of animals
-	public ArrayList<Animal> createAnimals(int count) {
+	public ArrayList<Animal> createAnimals() {
 		ArrayList<String> names = this.getNames();
 		ArrayList<String> conditions = this.getConditions();
 		ArrayList<Animal> animals = new ArrayList<Animal>();
 
 		// loop count times
-		for (int i = 0; i < count; i++) {
+		for (int i = 0; i < 1000; i++) {
 			// get name, condition and age
 			String name = names.get(this.rnd.nextInt(names.size()));
 			String condition = conditions.get(this.rnd.nextInt(conditions.size()));
@@ -50,6 +50,7 @@ public class AnimalFactory {
 			// randomly pick an animal type
 			Animal animal = null;
 			int animalType = this.rnd.nextInt(4);
+
 			// create the animal
 			switch (animalType) {
 				case 0:
@@ -72,42 +73,38 @@ public class AnimalFactory {
 	}
 
 	// create a Cat
-	private Cat createCat(String name, String condition, int age) {
+	public Cat createCat(String name, String condition, int age) {
 		Cat cat = new Cat();
 		cat.setName(name);
 		cat.setCondition(condition);
 		cat.setAge(age);
-		cat.setCatFood("Cat Food");
 		return cat;
 	}
 
 	// create a Dog
-	private Dog createDog(String name, String condition, int age) {
+	public Dog createDog(String name, String condition, int age) {
 		Dog dog = new Dog();
 		dog.setName(name);
 		dog.setCondition(condition);
 		dog.setAge(age);
-		dog.setDogFood("Dog Food");
 		return dog;
 	}
 
 	// create a Pig	
-	private Pig createPig(String name, String condition, int age) {
+	public Pig createPig(String name, String condition, int age) {
 		Pig pig = new Pig();
 		pig.setName(name);
 		pig.setCondition(condition);
 		pig.setAge(age);
-		pig.setPigFood("Pig Food");
 		return pig;
 	}
 
 	// create a Rabbit
-	private Rabbit createRabbit(String name, String condition, int age) {
+	public Rabbit createRabbit(String name, String condition, int age) {
 		Rabbit rabbit = new Rabbit();
 		rabbit.setName(name);
 		rabbit.setCondition(condition);
 		rabbit.setAge(age);
-		rabbit.setRabbitFood("Rabbit Food");
 		return rabbit;
 	}
 

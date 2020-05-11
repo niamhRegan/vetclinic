@@ -31,7 +31,10 @@ public class Animal {
 	}
 
 	public String toString() {
-		return this.name + ", " + this.age + ", " + this.condition;
+		return 	"TYPE: ANIMAL\n" + 
+				"NAME: " + this.getName()+ "\n" + 
+				"AGE: " + this.getAge() + "\n" + 
+				"CONDITION: " + this.getCondition() + "\n";
 	}
 	
 }

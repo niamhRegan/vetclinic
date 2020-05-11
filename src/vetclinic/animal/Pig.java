@@ -2,14 +2,11 @@ package vetclinic.animal;
 
 public class Pig extends Animal {
 
-	private String pigFood;
-
-	public String getPigFood() {
-		return pigFood;
-	}
-
-	public void setPigFood(String pigFood) {
-		this.pigFood = pigFood;
+	public String toString() {
+		return 	"TYPE: PIG\n" + 
+				"NAME: " + this.getName()+ "\n" + 
+				"AGE: " + this.getAge() + "\n" + 
+				"CONDITION: " + this.getCondition() + "\n";
 	}
 	
 }

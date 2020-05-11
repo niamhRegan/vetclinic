@@ -2,11 +2,10 @@ package vetclinic.staff;
 
 public class Staff {
 
-	private static int counter = 1;
 	private String name;
 	private int number;
-	private float salary;
-	
+	private int salary;
+
 	public String getName() {
 		return name;
 	}
@@ -18,21 +17,24 @@ public class Staff {
 	public int getNumber() {
 		return number;
 	}
-	
+
 	public void setNumber(int number) {
 		this.number = number;
 	}
 	
-	public float getSalary() {
+	public int getSalary() {
 		return salary;
 	}
 	
-	public void setSalary(float salary) {
+	public void setSalary(int salary) {
 		this.salary = salary;
 	}
 
-	// return the current counter and then increment it 
-	public static int getNewId() {
-		return counter++;
-	}	
+	public String toString() {
+		return "TYPE: STAFF\n" +
+				"NAME: " + this.getName() + "\n" + 
+				"NUMBER: " + this.getNumber() + "\n" + 
+				"SALARY: " + this.getSalary() + "\n";
+	}
+	
 }
