@@ -12,7 +12,7 @@ public class Main {
 
 		// create animals using factory
 		AnimalFactory animalFactory = new AnimalFactory();
-		ArrayList<Animal> animals = animalFactory.createAnimals(1000);
+		ArrayList<Animal> animals = animalFactory.createAnimals();
 		System.out.println(animals);		
 
 		// show main menu loop
