@@ -4,23 +4,37 @@ import java.util.Scanner;
 
 public class Menu {
 
+	private Setup setup;
     private Scanner keyboard = new Scanner(System.in);
 
+    public Menu() {
+    	// create setup class which creates all the staff and animals and assigns animals and tasks    	
+    	this.setup = new Setup();
+    	this.setup.performSetup();
+    }
+    
+    // main menu loop
     public void mainMenuLoop() {
-        int choice = 0;
+        // perform action based on input choice
+    	int choice = 0;
         do {
             choice = this.getMainMenuChoice();
             switch (choice) {
-                case 5:
-                	this.listAllAnimals();
+                case 1:
+                	this.displayStaff();
                     break;
+
+                case 5:
+                	this.displayAnimals();
+                    break;                    
             }            
         } while(choice != 11);
         System.out.println("Good Bye");
     }    
     
-	private int getMainMenuChoice() {
-        System.out.println(
+	public int getMainMenuChoice() {
+		// display main menu
+		System.out.println(
             "\n1) List all Staff\n" +
 	        "\n2) List staff by categories\n" +
 	        "\n3) List all Admin staff performing a certain task\n" +
@@ -33,16 +47,33 @@ public class Menu {
 	        "\n10) For a given member of the medical staff, pass to the next pet\n" +
             "\n11) Exit\n");
 
+		// get user input
         int choice = 0;
         do {
             System.out.println("\nChoose an option (1..11):");
             choice = keyboard.nextInt();            
         } while (choice < 1 || choice > 11);
+
+        // return the users choice
         return choice;
     }	
 
-	private void listAllAnimals() {
-		System.out.println("List All Aminals");
+	// display staff
+	public void displayStaff() {
+		// loop over staff list and display each one
+		for (int i = 0; i < this.setup.getStaff().size(); i++) {			
+			System.out.println(i + 1);
+			System.out.println(this.setup.getStaff().get(i));
+		}	
 	}
+
+	// display animals
+	public void displayAnimals() {
+		// loop over animals and display each one
+		for (int i = 0; i < this.setup.getAnimals().size(); i++) {
+			System.out.println(i + 1);
+			System.out.println(this.setup.getAnimals().get(i));
+		}	
+	}	
 	
 }
