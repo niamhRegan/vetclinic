@@ -85,4 +85,154 @@ public class Setup {
 		return list;
 	}
 	
+	// return a list of admin staff
+	public ArrayList<Admin> getAdmin() {
+		ArrayList<Admin> list = new ArrayList<Admin>();
+		// loop through all staff
+		for (int i = 0; i < this.staff.size(); i++) {
+			Staff currentStaff = this.staff.get(i);
+			// if current staff is admin add to list
+			if (currentStaff instanceof Admin) {
+				// need to cast Staff to Admin
+				list.add((Admin) currentStaff);
+			}
+		}
+		return list;
+	}
+	
+	// return a list of it staff
+	public ArrayList<It> getIt() {
+		ArrayList<It> list = new ArrayList<It>();
+		// loop through all staff
+		for (int i = 0; i < this.staff.size(); i++) {
+			Staff currentStaff = this.staff.get(i);
+			// if current staff is it add to list
+			if (currentStaff instanceof It) {
+				// need to cast Staff to It
+				list.add((It) currentStaff);
+			}
+		}
+		return list;
+	}
+
+	// return a list of receptionist
+	public ArrayList<Receptionist> getReceptionist() {
+		ArrayList<Receptionist> list = new ArrayList<Receptionist>();
+		// loop through all staff
+		for (int i = 0; i < this.staff.size(); i++) {
+			Staff currentStaff = this.staff.get(i);
+			// if current staff is it add to list
+			if (currentStaff instanceof Receptionist) {
+				// need to cast Staff to Nurse
+				list.add((Receptionist) currentStaff);
+			}
+		}
+		return list;
+	}
+	
+	// return a list of nurses
+	public ArrayList<Nurse> getNurse() {
+		ArrayList<Nurse> list = new ArrayList<Nurse>();
+		// loop through all staff
+		for (int i = 0; i < this.staff.size(); i++) {
+			Staff currentStaff = this.staff.get(i);
+			// if current staff is it add to list
+			if (currentStaff instanceof Nurse) {
+				// need to cast Staff to Nurse
+				list.add((Nurse) currentStaff);
+			}
+		}
+		return list;
+	}
+
+	// return a list of trainee vets
+	public ArrayList<TraineeVet> getTraineeVet() {
+		ArrayList<TraineeVet> list = new ArrayList<TraineeVet>();
+		// loop through all staff
+		for (int i = 0; i < this.staff.size(); i++) {
+			Staff currentStaff = this.staff.get(i);
+			// if current staff is it add to list
+			if (currentStaff instanceof TraineeVet) {
+				// need to cast Staff to Nurse
+				list.add((TraineeVet) currentStaff);
+			}
+		}
+		return list;
+	}
+
+	// return a list of vets
+	public ArrayList<Vet> getVet() {
+		ArrayList<Vet> list = new ArrayList<Vet>();
+		// loop through all staff
+		for (int i = 0; i < this.staff.size(); i++) {
+			Staff currentStaff = this.staff.get(i);
+			// if current staff is it add to list
+			if (currentStaff instanceof Vet) {
+				// need to cast Staff to Nurse
+				list.add((Vet) currentStaff);
+			}
+		}
+		return list;
+	}
+
+	// return a list of dogs
+	public ArrayList<Dog> getDogs() {
+		ArrayList<Dog> list = new ArrayList<Dog>();
+		// loop through all animals
+		for (int i = 0; i < this.animals.size(); i++) {
+			Animal currentAnimal = this.animals.get(i);
+			// if current staff is it add to list
+			if (currentAnimal instanceof Dog) {
+				// need to cast Animal to Dog
+				list.add((Dog) currentAnimal);
+			}
+		}
+		return list;
+	}
+	
+	// return a list of cats
+	public ArrayList<Cat> getCats() {
+		ArrayList<Cat> list = new ArrayList<Cat>();
+		// loop through all animals
+		for (int i = 0; i < this.animals.size(); i++) {
+			Animal currentAnimal = this.animals.get(i);
+			// if current staff is it add to list
+			if (currentAnimal instanceof Cat) {
+				// need to cast Animal to Cat
+				list.add((Cat) currentAnimal);
+			}
+		}
+		return list;
+	}
+
+	// return a list of rabbits
+	public ArrayList<Rabbit> getRabbits() {
+		ArrayList<Rabbit> list = new ArrayList<Rabbit>();
+		// loop through all animals
+		for (int i = 0; i < this.animals.size(); i++) {
+			Animal currentAnimal = this.animals.get(i);
+			// if current staff is it add to list
+			if (currentAnimal instanceof Rabbit) {
+				// need to cast Animal to Rabbit
+				list.add((Rabbit) currentAnimal);
+			}
+		}
+		return list;
+	}
+
+	// return a list of pigs
+	public ArrayList<Pig> getPigs() {
+		ArrayList<Pig> list = new ArrayList<Pig>();
+		// loop through all animals
+		for (int i = 0; i < this.animals.size(); i++) {
+			Animal currentAnimal = this.animals.get(i);
+			// if current staff is it add to list
+			if (currentAnimal instanceof Pig) {
+				// need to cast Animal to Pig
+				list.add((Pig) currentAnimal);
+			}
+		}
+		return list;
+	}
+	
 }

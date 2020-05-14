@@ -1,6 +1,13 @@
 package vetclinic;
 
+import java.util.ArrayList;
 import java.util.Scanner;
+
+import vetclinic.staff.It;
+import vetclinic.staff.Nurse;
+import vetclinic.staff.Receptionist;
+import vetclinic.staff.TraineeVet;
+import vetclinic.staff.Vet;
 
 public class Menu {
 
@@ -24,6 +31,10 @@ public class Menu {
                 	this.displayStaff();
                     break;
 
+                case 2:
+                	this.displayStaffByCategory();
+                    break;
+                    
                 case 5:
                 	this.displayAnimals();
                     break;                    
@@ -58,7 +69,8 @@ public class Menu {
         return choice;
     }	
 
-	// display staff
+	
+	// OPTION 1 - display staff
 	public void displayStaff() {
 		// loop over staff list and display each one
 		for (int i = 0; i < this.setup.getStaff().size(); i++) {			
@@ -67,7 +79,102 @@ public class Menu {
 		}	
 	}
 
-	// display animals
+	
+	// OPTION 2 - display staff by category e.g. Nurse
+	public void displayStaffByCategory() {
+		// show options
+		System.out.println("\nChoose a staff category:" +
+    	        "\n1) IT\n" +
+    	        "\n2) Receptionist\n" +
+    	        "\n3) Nurse\n" +
+    	        "\n4) Trainee Vet\n" +
+    	        "\n5) Vet\n");
+
+		// get users choice
+		int choice = 0;
+        do {
+            System.out.println("\nChoose an option (1..5):");
+            choice = keyboard.nextInt();            
+        } while (choice < 1 || choice > 5);
+
+        // perform action based on input choice
+        switch (choice) {
+        	case 1:
+        		this.displayIt();
+        		break;
+        	case 2:
+        		this.displayReceptionist();
+        		break;
+        	case 3:
+        		this.displayNurse();
+        		break;
+        	case 4:
+        		this.displayTraineeVet();
+        		break;
+        	case 5:
+        		this.displayVet();
+        		break;
+        }
+	}
+	
+	// display IT
+	public void displayIt() {
+		// get list of It
+		ArrayList<It> list = this.setup.getIt();
+		// loop over list and display each one
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i + 1);
+			System.out.println(list.get(i));
+		}	
+	}
+
+	// display Receptionist
+	public void displayReceptionist() {
+		// get list of Receptionist
+		ArrayList<Receptionist> list = this.setup.getReceptionist();
+		// loop over list and display each one
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i + 1);
+			System.out.println(list.get(i));
+		}	
+	}
+	
+	// display Nurse
+	public void displayNurse() {
+		// get list of Nurse
+		ArrayList<Nurse> list = this.setup.getNurse();
+		// loop over list and display each one
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i + 1);
+			System.out.println(list.get(i));
+		}	
+	}
+
+	// display TraineeVet
+	public void displayTraineeVet() {
+		// get list of TraineeVet
+		ArrayList<TraineeVet> list = this.setup.getTraineeVet();
+		// loop over list and display each one
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i + 1);
+			System.out.println(list.get(i));
+		}	
+	}
+	
+	// display Vet
+	public void displayVet() {
+		// get list of Vet
+		ArrayList<Vet> list = this.setup.getVet();
+		// loop over list and display each one
+		for (int i = 0; i < list.size(); i++) {
+			System.out.println(i + 1);
+			System.out.println(list.get(i));
+		}	
+	}
+	
+
+	
+	// OPTION 5 - display animals
 	public void displayAnimals() {
 		// loop over animals and display each one
 		for (int i = 0; i < this.setup.getAnimals().size(); i++) {
