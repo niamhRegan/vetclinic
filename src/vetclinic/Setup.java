@@ -19,10 +19,7 @@ import vetclinic.staff.StaffFactory;
 import vetclinic.staff.TraineeVet;
 import vetclinic.staff.Vet;
 
-// this class create the list of animals and staff
-// assigns aminals to medical staff
-// assigns tasks to admin staff
-
+// Setup class - creates and returns the list of animals and staff, assigns aminals to medical staff, assigns tasks to admin staff
 public class Setup {
 
 	private Random rnd = new Random();

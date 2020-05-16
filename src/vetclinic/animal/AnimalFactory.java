@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+// Creates all Animals (Cat, Dog, Rabbit, Pig)
 public class AnimalFactory {
 
     private Random rnd = new Random();

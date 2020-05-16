@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Random;
 
+// Creates all Staff classes (Nurse, Vet, Trainee Vet, Receptionist, IT)
 public class StaffFactory {
 
     private Random rnd = new Random();
